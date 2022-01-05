@@ -1,16 +1,15 @@
 # Organize My Studies
-1. Settings
-  - environment
-  - jupyter
-  - vscode
-2. Mahine Learning
-  - ensemble
-  - boostrap
-  - XGBoost algorithm
-3. Deep Learning
-  - LSTM
-  - CNN
-4. Git
++ Settings
+    - environment
+    - jupyter
+    - vscode
++ Mahine Learning
+    - ensemble
+    - boostrap
+    - XGBoost algorithm
++ Deep Learning
+    - LSTM
+    - CNN
 
 --------------------------------------------------------------
 올해가 벌써 2022년이라니..시간이 너무 빠른 것 같다.
