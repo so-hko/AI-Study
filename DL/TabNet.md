@@ -15,8 +15,10 @@ Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 
     2. 각각의 Decision step에서 Sequential attention을 사용하여 Feature selection 을 진행
     3. 위 단계를 통해 두가지의 특성을 얻을 수 있음
         (1) 다른 학습 모델보다 더 좋은 분류/회귀 예측 결과를 보임
-        (2) Local interpretability : feature importance와 feature가 어떻게 combine되었는지를 visualize(시각화)함
-            Global interpretability : 각 feature들의 영향/기여도를 수치화 함
+        (2) Local interpretability : 
+            feature importance와 feature가 어떻게 combine되었는지를 visualize(시각화)함
+            Global interpretability : 
+            각 feature들의 영향/기여도를 수치화 함
     4. masked feature값을 예측하기 위해 unsupervised pre-training단계를 진행하여 높은 성능향상을 보임
 ```
 
