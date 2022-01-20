@@ -24,8 +24,16 @@ Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 
 
 ## 2. Related Work
 
-3. TabNet for Tabular Learning
+#####1. Feature Selection
+######　Unsupervised pre-training vs Supervised fine-tuning
+#####2. Tree-based Learning
 
-4. Experiments
+#####3. Self-supervised Learning
+   
 
-5. Conclusions
+
+## 3. TabNet for Tabular Learning
+
+## 4. Experiments
+
+## 5. Conclusions
