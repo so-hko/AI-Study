@@ -2,7 +2,7 @@
 
 01. notable : 주목할만한
 02. canonical : 정식의 -> _canonical Architecture 표준 아키텍처_
-03. then, what is different between canonical and standard
+03. then, what is different between canonical and standard?
     - canonical is ~ and standard is ...
    
 04. fuel : (verb) 촉진시키다, 돋구다
