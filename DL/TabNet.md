@@ -1,7 +1,6 @@
 # [Paper Review] TabNet : Attentive Interpretable Tabular Learning (2021)
 
-##1. Introduction
-
+1. Introduction
 -----
 
     
@@ -10,8 +9,7 @@ Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 
 
 하지만, DNN기반의 Tabular Dataset을 위한 방법은 필요하고 그 까닭은 
 
-##2. Related Work
-
+2. Related Work
 -----
 
 3. TabNet for Tabular Learning
