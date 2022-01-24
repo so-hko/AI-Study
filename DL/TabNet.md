@@ -33,6 +33,7 @@ Unsupervised pre-training vs Supervised fine-tuning
 
 
 ## 3. TabNet for Tabular Learning
+TabNet Architecture
 
 ## 4. Experiments
 
