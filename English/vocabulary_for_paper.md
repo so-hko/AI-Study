@@ -12,3 +12,6 @@
 08. outperform : 우수하다, 더 좋은 성능을 내다.
 09. be on par (with) ~ : 동등하다 _(ex) Tabnet outperforms or is on par with other tabular learning models._
 10. significant : 상당한
+11. learning capacity : 학습능력
+12. sparsity : 희소성
+13. 
