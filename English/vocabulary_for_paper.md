@@ -14,4 +14,3 @@
 10. significant : 상당한
 11. learning capacity : 학습능력
 12. sparsity : 희소성
-13.  
