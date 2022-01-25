@@ -25,15 +25,14 @@ Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 
 ## 2. Related Work
 
 #### 1. Feature Selection
-Unsupervised pre-training vs Supervised fine-tuning
 #### 2. Tree-based Learning
-
 #### 3. Self-supervised Learning
-   
 
 
 ## 3. TabNet for Tabular Learning
-TabNet Architecture
+
+![TabNet overall Architecture] ()
+
 
 ## 4. Experiments
 
