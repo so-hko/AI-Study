@@ -31,7 +31,7 @@ Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 
 
 ## 3. TabNet for Tabular Learning
 
-![TabNet overall Architecture] (https://github.com/so-hko/Study/blob/main/DL/images/TabNet%20overall%20architecture.png?raw=true)
+![TabNet_overall_Architecture](https://github.com/so-hko/Study/blob/main/DL/images/TabNet%20overall%20architecture.png?raw=true)
 
 
 ## 4. Experiments
