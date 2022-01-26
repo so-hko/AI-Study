@@ -46,15 +46,23 @@ Mask Block은 Attentive transformer block에서 정보를 받아 각각의 step�
 　 모델의 입력으로는 Tabular Data가 들어간다. Tabular Data는 표(table)의 형태를 띄 우는 데이터를 의미하는데 흔히 엑셀에서 표현될 수 있는 데이터라고 생각하면 된다. 
 이 Tabular 데이터는 예측모델설계를 위해 Numerical과 Categorical 종류로 나뉠 수 있는데, Numerical의 경우에는 label값이 수치적으로 표현되는, 예를들어 집값데이터, 주식데이터 처럼 0.1,0.3...과 같은 수치로 표현되는 데이터를 의미하고,
 Categorical 데이터의 경우에는 동물(개,고양이)이라던가 나라(프랑스, 한국, 미국, 일본), 혹은 상태(찌그러짐, 평평한, 갈라짐)과 같은 카테고리로 나누어지는 feature들을 다루는 경우를 의미한다. 
-caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 수치화해주는 처리가 필요로 되는데, 
-본 논문에서 제안하는 TabNet 모델에서는 Categorical variable 또한 별다른 전처리를 하지않아도 되도록 임베딩해주는 레이어를 구성한다.
+caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 수치화해주는 처리가 필요로 되는데, 따라서
+본 논문에서 실험할 때 Categorical variable를 가지는 데이터를 실험하는 경우 임베딩해주는 레이어를 구성하였다.
 또한 Input으로 Tabular Data가 들어오면 바로 BN(BatchNormalization)레이어를 거쳐 ~을 위해 Feature transformer Block으로 들어가서 처리된다.
 
 ② Feature Transformer <br><br>
-![Transformer](https://github.com/so-hko/Study/blob/main/DL/images/FeatureTransformer.png?raw=true) <br>
+![Feature Transformer](https://github.com/so-hko/Study/blob/main/DL/images/FeatureTransformer.png?raw=true) <br>
 위 그림에서 우리는 Feature Transformer Block 처리과정을 보고 이해할 수 있다. 
 <span style="color:#D3D3D3"> 솔직히 Feature Transformer 블록 처리를 왜 해주는 건지에 대해서는 아직 정확히 이해가 되지않아 글로 표현이 안된다.
-(논문을 좀더 살펴봐야겠다...ㅠㅠ)</span> <br>
+(논문을 좀더 살펴봐야겠다...ㅠㅠ)</span> <br> 그림에서 알 수 있듯이 FC(Fully Connected Layer) - BN(Batch Normalization) - GLU(Gated Linear Unit)를 4번 반복하는 구조를 가지고 있다. <br>
+(1) Shared across decision steps : 그 중 2개 layer들은 모든 전체 overall architecture에서 진행되는 모든 Step들과 공유되고, <br> 
+(2) Decision step dependent : 나머지 2개 layer집합은 현재 진행되고 있는 해당 Step에서만 사용되는 layer이다. <br>
+
+<br>
+
+③ Attentive transformer <br><br>
+![Attentive Transformer]() <br>
+
 
 
 ## 4. Experiments
