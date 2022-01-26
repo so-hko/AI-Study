@@ -37,21 +37,24 @@ Attentive Interpretable Tabular Learning인 TabNetwork의 전반적인 구조는
 위 아키텍처는 Step1부터 StepN까지 구성되고, 각각의 Step마다 (1) Feature transformer와 (2) Attentive transformer, (3) Mask 처리를 해준다. 
 특히 그림a에서 볼 수 있듯이 Feature transformer block 부분을 처리한 후 나오는 결과(차후에 더 자세히 설명예정)가 split block으로 가면 
 split block은 차후에 진행될 단계인 attentive transformer 단계로도 넘겨주고 Relu활성화 함수와 함께 다음 스텝으로 넘겨주어 
-최후의 overall output 도출<span style="color:gray">(나는 이걸 예측(prediction)결과로 이해했다.)</span>을 위해 
+최후의 overall output 도출 <span style="color:#D3D3D3">(나는 이걸 예측(prediction)결과로 이해했다.) </span> 을 위해 
 representation을 2개로 나누어(split) 주는 역할을 한다. 
 Mask Block은 Attentive transformer block에서 정보를 받아 각각의 step에서 feature selection을 위해 사용된 마스킹(Masking)정보를 담고 있다. 
 그리고 이 모든 스텝마다의 마스킹 정보들은 추후에 Agg. Block을 통해 aggregate(집계)되어 최종적으로 어떤 feature attributes들이 사용되었는지 정보를 알 수 있다.<br>
 모델에 대한 더 정확하고 자세한 이해를 위해 모델 아키텍처의 구성요소들과 Input, Output 및 동작원리 등에 대해 살펴보겠다.<br><br>
 ① INPUT <br>
-　 모델의 입력으로는 Tabular Data가 들어간다. Tabular Data는 표(table)의 형태를 띄우는 데이터를 의미하는데 흔히 엑셀에서 표현될 수 있는 데이터라고 생각하면 된다. 
+　 모델의 입력으로는 Tabular Data가 들어간다. Tabular Data는 표(table)의 형태를 띄 우는 데이터를 의미하는데 흔히 엑셀에서 표현될 수 있는 데이터라고 생각하면 된다. 
 이 Tabular 데이터는 예측모델설계를 위해 Numerical과 Categorical 종류로 나뉠 수 있는데, Numerical의 경우에는 label값이 수치적으로 표현되는, 예를들어 집값데이터, 주식데이터 처럼 0.1,0.3...과 같은 수치로 표현되는 데이터를 의미하고,
 Categorical 데이터의 경우에는 동물(개,고양이)이라던가 나라(프랑스, 한국, 미국, 일본), 혹은 상태(찌그러짐, 평평한, 갈라짐)과 같은 카테고리로 나누어지는 feature들을 다루는 경우를 의미한다. 
 caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 수치화해주는 처리가 필요로 되는데, 
 본 논문에서 제안하는 TabNet 모델에서는 Categorical variable 또한 별다른 전처리를 하지않아도 되도록 임베딩해주는 레이어를 구성한다.
 또한 Input으로 Tabular Data가 들어오면 바로 BN(BatchNormalization)레이어를 거쳐 ~을 위해 Feature transformer Block으로 들어가서 처리된다.
 
-② Feature Transformer <br> 
-![Transformer](https://github.com/so-hko/Study/blob/main/DL/images/FeatureTransformer.png?raw=true)
+② Feature Transformer <br><br>
+![Transformer](https://github.com/so-hko/Study/blob/main/DL/images/FeatureTransformer.png?raw=true) <br>
+위 그림에서 우리는 Feature Transformer Block 처리과정을 보고 이해할 수 있다. 
+<span style="color:#D3D3D3"> 솔직히 Feature Transformer 블록 처리를 왜 해주는 건지에 대해서는 아직 정확히 이해가 되지않아 글로 표현이 안된다.
+(논문을 좀더 살펴봐야겠다...ㅠㅠ)</span> <br>
 
 
 ## 4. Experiments
