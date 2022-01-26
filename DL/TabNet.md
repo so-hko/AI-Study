@@ -51,7 +51,7 @@ caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 
 또한 Input으로 Tabular Data가 들어오면 바로 BN(BatchNormalization)레이어를 거쳐 ~을 위해 Feature transformer Block으로 들어가서 처리된다.
 
 ② Feature Transformer <br> 
-
+![Transformer](https://github.com/so-hko/Study/blob/main/DL/images/FeatureTransformer.png?raw=true)
 
 
 ## 4. Experiments
