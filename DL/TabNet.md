@@ -59,8 +59,6 @@ caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 
 (1) Shared across decision steps : 그 중 2개 layer들은 모든 전체 overall architecture에서 진행되는 모든 Step들과 공유되고, <br> 
 (2) Decision step dependent : 나머지 2개 layer집합은 현재 진행되고 있는 해당 Step에서만 사용되는 layer이다. <br>
 
-<br>
-
 ③ Attentive transformer <br><br>
 <p align="center"><img src="https://github.com/so-hko/Study/blob/main/DL/images/AttentiveTransformer.png?raw=true" height="300px" width="300"> <br> </p>
 <br>
@@ -69,8 +67,7 @@ caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 
 Sparsemax는 softmax보다 sparsity(희소성)을 강조하기 위해 제안된 activate function인데 이를 통해 극단적인 드라마틱한 Feature Selection 효과를 얻을 수 있고,
 sparse matrix와 변수들을 element-wise하면 특정 변수만 선택한 효과를 얻을 수 있다.
 
-<br>
-
+<br><br>
 ④ Output <br>
 아웃풋은 Step 1부터 Step N까지를 모두 거쳐 나온 예측(Prediction)과 각각의 Step마다 존재하는 Attentive tranformer와 Feature transformer 단계들을 거처 Feature Selection과 Feature Masking을 해준 결과를 바탕으로 가장 많이 쓰인(유의미한) Feature attributes를 아웃풋으로 생각할 수 있을 것 같다.
 
