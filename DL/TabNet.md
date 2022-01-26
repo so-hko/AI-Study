@@ -61,7 +61,7 @@ caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 
 <br>
 
 ③ Attentive transformer <br><br>
-![Attentive Transformer]() <br>
+![Attentive Transformer](https://github.com/so-hko/Study/blob/main/DL/images/AttentiveTransformer.png?raw=true) <br>
 
 
 
