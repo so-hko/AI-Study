@@ -33,6 +33,7 @@ Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 
 ## 3. TabNet for Tabular Learning
 
 ![TabNet_overall_Architecture](https://github.com/so-hko/Study/blob/main/DL/images/TabNet%20overall%20architecture.png?raw=true)
+<br>
 Attentive Interpretable Tabular Learning인 TabNetwork의 전반적인 구조는 위와 같다.<br>
 위 아키텍처는 Step1부터 StepN까지 구성되고, 각각의 Step마다 (1) Feature transformer와 (2) Attentive transformer, (3) Mask 처리를 해준다. 
 특히 그림a에서 볼 수 있듯이 Feature transformer block 부분을 처리한 후 나오는 결과(차후에 더 자세히 설명예정)가 split block으로 가면 
@@ -40,7 +41,7 @@ split block은 차후에 진행될 단계인 attentive transformer 단계로도 
 최후의 overall output 도출 <span style="color:#D3D3D3">(나는 이걸 예측(prediction)결과로 이해했다.) </span> 을 위해 
 representation을 2개로 나누어(split) 주는 역할을 한다. 
 Mask Block은 Attentive transformer block에서 정보를 받아 각각의 step에서 feature selection을 위해 사용된 마스킹(Masking)정보를 담고 있다. 
-그리고 이 모든 스텝마다의 마스킹 정보들은 추후에 Agg. Block을 통해 aggregate(집계)되어 최종적으로 어떤 feature attributes들이 사용되었는지 정보를 알 수 있다.<br>
+그리고 이 모든 스텝마다의 마스킹 정보들은 추후에 Agg. Block을 통해 aggregate(집계)되어 n번째 step이후 최종적으로 어떤 feature attributes들이 사용되었는지 정보를 알 수 있다.<br>
 모델에 대한 더 정확하고 자세한 이해를 위해 모델 아키텍처의 구성요소들과 Input, Output 및 동작원리 등에 대해 살펴보겠다.<br><br>
 ① INPUT <br>
 　 모델의 입력으로는 Tabular Data가 들어간다. Tabular Data는 표(table)의 형태를 띄 우는 데이터를 의미하는데 흔히 엑셀에서 표현될 수 있는 데이터라고 생각하면 된다. 
@@ -61,9 +62,17 @@ caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 
 <br>
 
 ③ Attentive transformer <br><br>
-<p align="center"><img src="https://github.com/so-hko/Study/blob/main/DL/images/AttentiveTransformer.png?raw=true" height="300px" width="300"> <br>
+<p align="center"><img src="https://github.com/so-hko/Study/blob/main/DL/images/AttentiveTransformer.png?raw=true" height="300px" width="300"> <br> </p>
+<br>
+ Attentive transformer Block은 위 그림과 같이 구성된다. 이전 Decision step에서 각 feature가 얼마나 많이 사용되었는지를 집계한 정보를 Prior scales 에 저장한다.
+또한 이전 단계들의 중요한 Feature를 Selection하기 위해 sparsemax 활성화 함수를 사용한다.<br>
+Sparsemax는 softmax보다 sparsity(희소성)을 강조하기 위해 제안된 activate function인데 이를 통해 극단적인 드라마틱한 Feature Selection 효과를 얻을 수 있고,
+sparse matrix와 변수들을 element-wise하면 특정 변수만 선택한 효과를 얻을 수 있다.
 
+<br>
 
+④ Output <br>
+아웃풋은 Step 1부터 Step N까지를 모두 거쳐 나온 예측(Prediction)과 각각의 Step마다 존재하는 Attentive tranformer와 Feature transformer 단계들을 거처 Feature Selection과 Feature Masking을 해준 결과를 바탕으로 가장 많이 쓰인(유의미한) Feature attributes를 아웃풋으로 생각할 수 있을 것 같다.
 
 ## 4. Experiments
 
