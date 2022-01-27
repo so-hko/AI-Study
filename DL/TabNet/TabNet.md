@@ -32,7 +32,7 @@ Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 
 
 ## 3. TabNet for Tabular Learning
 
-![TabNet_overall_Architecture](https://github.com/so-hko/Study/blob/main/DL/images/TabNet%20overall%20architecture.png?raw=true)
+![TabNet_overall_Architecture](https://github.com/so-hko/Study/blob/main/DL/TabNet/images/TabNet%20overall%20architecture.png?raw=true)
 <br>
 Attentive Interpretable Tabular Learning인 TabNetwork의 전반적인 구조는 위와 같다.<br>
 위 아키텍처는 Step1부터 StepN까지 구성되고, 각각의 Step마다 (1) Feature transformer와 (2) Attentive transformer, (3) Mask 처리를 해준다. 
@@ -52,7 +52,7 @@ caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 
 또한 Input으로 Tabular Data가 들어오면 바로 BN(BatchNormalization)레이어를 거쳐 Feature transformer Block으로 들어가서 처리된다. 
 
 ② Feature Transformer <br><br>
-![Feature Transformer](https://github.com/so-hko/Study/blob/main/DL/images/FeatureTransformer.png?raw=true) <br>
+![Feature Transformer](https://github.com/so-hko/Study/blob/main/DL/TabNet/images/FeatureTransformer.png?raw=true) <br>
 위 그림에서 우리는 Feature Transformer Block 처리과정을 보고 이해할 수 있다. 
 <span style="color:#D3D3D3"> 2022/1/26솔직히 Feature Transformer 블록 처리를 왜 해주는 건지에 대해서는 아직 정확히 이해가 되지않아 글로 표현이 안된다.
 (논문을 좀더 살펴봐야겠다...ㅠㅠ)</span> <br>
@@ -62,7 +62,7 @@ caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 
 (2) Decision step dependent : 나머지 2개 layer집합은 현재 진행되고 있는 해당 Step에서만 사용되는 layer이다. <br>
 
 ③ Attentive transformer <br><br>
-<p align="center"><img src="https://github.com/so-hko/Study/blob/main/DL/images/AttentiveTransformer.png?raw=true" height="300px" width="300"> <br> </p>
+<p align="center"><img src="https://github.com/so-hko/Study/blob/main/DL/TabNet/images/AttentiveTransformer.png?raw=true" height="300px" width="300"> <br> </p>
 <br>
  Attentive transformer Block은 위 그림과 같이 구성된다. 이전 Decision step에서 각 feature가 얼마나 많이 사용되었는지를 집계한 정보를 Prior scales 에 저장한다.
 또한 이전 단계들의 중요한 Feature를 Selection하기 위해 sparsemax 활성화 함수를 사용한다.<br>
