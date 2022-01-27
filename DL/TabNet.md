@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-    
+
 Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 좋은 성능을 보이며 많은 주목을 받고 있다.
 그러나, 표(TABLE)의 형태를 띄는 정형 데이터인 Tabular Data에 한정해서는 DNN보다 Ensemble Tree기반 머신러닝 방법론들이 더 좋은 성능을 보이고 많이 사용된다.
 
@@ -49,13 +49,15 @@ Mask Block은 Attentive transformer block에서 정보를 받아 각각의 step�
 Categorical 데이터의 경우에는 동물(개,고양이)이라던가 나라(프랑스, 한국, 미국, 일본), 혹은 상태(찌그러짐, 평평한, 갈라짐)과 같은 카테고리로 나누어지는 feature들을 다루는 경우를 의미한다. 
 caterical feature의 경우 원핫인코딩과 같은 인코딩방법을 통해 수치화해주는 처리가 필요로 되는데, 따라서
 본 논문에서 실험할 때 Categorical variable를 가지는 데이터를 실험하는 경우 임베딩해주는 레이어를 구성하였다.
-또한 Input으로 Tabular Data가 들어오면 바로 BN(BatchNormalization)레이어를 거쳐 ~을 위해 Feature transformer Block으로 들어가서 처리된다.
+또한 Input으로 Tabular Data가 들어오면 바로 BN(BatchNormalization)레이어를 거쳐 Feature transformer Block으로 들어가서 처리된다. 
 
 ② Feature Transformer <br><br>
 ![Feature Transformer](https://github.com/so-hko/Study/blob/main/DL/images/FeatureTransformer.png?raw=true) <br>
 위 그림에서 우리는 Feature Transformer Block 처리과정을 보고 이해할 수 있다. 
-<span style="color:#D3D3D3"> 솔직히 Feature Transformer 블록 처리를 왜 해주는 건지에 대해서는 아직 정확히 이해가 되지않아 글로 표현이 안된다.
-(논문을 좀더 살펴봐야겠다...ㅠㅠ)</span> <br> 그림에서 알 수 있듯이 FC(Fully Connected Layer) - BN(Batch Normalization) - GLU(Gated Linear Unit)를 4번 반복하는 구조를 가지고 있다. <br>
+<span style="color:#D3D3D3"> 2022/1/26솔직히 Feature Transformer 블록 처리를 왜 해주는 건지에 대해서는 아직 정확히 이해가 되지않아 글로 표현이 안된다.
+(논문을 좀더 살펴봐야겠다...ㅠㅠ)</span> <br>
+(2022/1/27) 2개의 shared layer와 2개의 decision step-dependent layer을 잇기(concatenation)위한 특징들을 얻기 위해 feature transformer block을 사용하여 선택된 변수들을 처리한다.
+그림에서 알 수 있듯이 FC(Fully Connected Layer) - BN(Batch Normalization) - GLU(Gated Linear Unit)를 4번 반복하는 구조를 가지고 있다. <br>
 (1) Shared across decision steps : 그 중 2개 layer들은 모든 전체 overall architecture에서 진행되는 모든 Step들과 공유되고, <br> 
 (2) Decision step dependent : 나머지 2개 layer집합은 현재 진행되고 있는 해당 Step에서만 사용되는 layer이다. <br>
 
@@ -78,6 +80,10 @@ sparse matrix와 변수들을 element-wise하면 특정 변수만 선택한 효�
 
 ---------------------------------------------------
 2022년 01월 26일 : 논문 나름 꼼꼼히 읽어봤다 생각했는데 막상 정리하려고 하니 하나도 개념이 구조적으로 정립되지 않았다는 생각이 들었다.
-아직 feature transformer의 역활 어떤 형태로 output이 나오는지 등에 대해 잘 이해가 되지 않는 듯 하다. 논문을 더 살펴보고 제공되어있는 코드로 예제/실험 을 한번 해봐야겠다.
+아직 feature transformer의 역활 어떤 형태로 output이 나오는지 등에 대해 잘 이해가 되지 않는 듯 하다.(1월27일 :  다시읽어보니까 다음 step을 위해 결과물과 정보들의 결정 단계를 분리하는 특징들을 얻기 위해 feature transformer을 사용한 듯) 논문을 더 살펴보고 제공되어있는 코드로 예제/실험 을 한번 해봐야겠다.
 
 TabNet논문저자 깃허브에 [코드](https://github.com/dreamquark-ai/tabnet) 가 올려져있으니 이것을 참고해보는 것도 좋을듯 싶다.
+
+```python
+
+```
