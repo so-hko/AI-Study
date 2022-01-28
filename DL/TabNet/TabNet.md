@@ -23,7 +23,7 @@ Deep Neural Network(DNN) 은 Image나 Audio와 같은 비정형 데이터에서 
     4. masked feature값을 예측하기 위해 unsupervised pre-training단계를 진행하여 높은 성능향상을 보임
 ```
 
-## 2. Related Work df
+## 2. Related Work 
 
 #### 1. Feature Selection
 #### 2. Tree-based Learning
