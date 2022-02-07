@@ -1,5 +1,4 @@
 # [Paper Review] TabNet : Attentive Interpretable Tabular Learning (2021)
-한번 테스트
 
 ## 1. Introduction
 
@@ -84,7 +83,3 @@ sparse matrix와 변수들을 element-wise하면 특정 변수만 선택한 효�
 아직 feature transformer의 역활 어떤 형태로 output이 나오는지 등에 대해 잘 이해가 되지 않는 듯 하다.(1월27일 :  다시읽어보니까 다음 step을 위해 결과물과 정보들의 결정 단계를 분리하는 특징들을 얻기 위해 feature transformer을 사용한 듯) 논문을 더 살펴보고 제공되어있는 코드로 예제/실험 을 한번 해봐야겠다.
 
 TabNet논문저자 깃허브에 [코드](https://github.com/dreamquark-ai/tabnet) 가 올려져있으니 이것을 참고해보는 것도 좋을듯 싶다.
-
-```python
-
-```
